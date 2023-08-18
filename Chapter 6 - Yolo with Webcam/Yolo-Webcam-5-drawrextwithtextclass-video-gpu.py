@@ -3,11 +3,10 @@ import cv2
 import cvzone
 import math
 
-cap = cv2.VideoCapture(0)  # For Webcam 0 for only one webcam , number 1,2,3 for id
-cap.set(3, 1280) # prop id number / height
-cap.set(4, 720) # prop id number / width
+cap = cv2.VideoCapture("../Videos/motorbikes.mp4")  # For Videos
 
-model = YOLO("../Yolo-Weights/yolov8n.pt")
+
+model = YOLO("../Yolo-Weights/yolov8l.pt")
 
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",

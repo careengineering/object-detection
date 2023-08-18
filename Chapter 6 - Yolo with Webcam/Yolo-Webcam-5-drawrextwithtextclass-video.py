@@ -3,10 +3,9 @@ import cv2
 import cvzone
 import math
 
-cap = cv2.VideoCapture("../Videos/cars.mp4")  # For Videos
+cap = cv2.VideoCapture("../Videos/motorbikes.mp4")  # For Videos
 
-
-model = YOLO("../Yolo-Weights/yolov8n.pt")
+model = YOLO("../Yolo-Weights/yolov8l.pt")
 
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",

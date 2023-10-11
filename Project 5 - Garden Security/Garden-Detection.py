@@ -4,7 +4,7 @@ import cvzone
 import math
 from sort import *
 
-cap = cv2.VideoCapture("../Videos/people.mp4")  # For Videos
+cap = cv2.VideoCapture("../Videos/mcam1.mp4")  # For Videos
 
 model = YOLO("../Yolo-Weights/yolov8l.pt")
 
@@ -20,7 +20,7 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "teddy bear", "hair drier", "toothbrush"
               ]
 
-mask = cv2.imread("mask.png")
+mask = cv2.imread("mask_cam1.png")
 
 #Tracking
 tracker = Sort(max_age=20, min_hits=3, iou_threshold=0.3)
@@ -58,7 +58,7 @@ while True:
             currentClass = classNames[cls]
 
 
-            if currentClass == "person" and conf>0.3:
+            if conf>0.01:
                 # cvzone.putTextRect(img,f'{currentClass} {conf}',(max(0,x1) , max(35,y1)) , scale=0.6 , thickness=1, offset=3)
                 # cvzone.cornerRect(img, (x1,y1,w,h), l=9 , rt=5)
                 currentArray = np.array([x1,y1,x2,y2,conf])

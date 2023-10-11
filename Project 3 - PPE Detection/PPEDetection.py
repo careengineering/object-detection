@@ -12,7 +12,9 @@ model = YOLO("ppe.pt")
 
 classNames = ['Hardhat', 'Mask', 'NO-Hardhat', 'NO-Mask', 'NO-Safety Vest', 'Person', 'Safety Cone',
               'Safety Vest', 'machinery', 'vehicle']
+
 myColor = (0, 0, 255)
+
 while True:
     success, img = cap.read()
     results = model(img, stream=True)
